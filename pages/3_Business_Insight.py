@@ -1,21 +1,64 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.read_csv("motorcycle_oil_clean.csv")
+# ==========================
+# Load Data
+# ==========================
 
-st.title("📊 Business Insight")
+df = pd.read_csv("amazone_motorcycle_oil.csv")
 
-tab1,tab2,tab3 = st.tabs(
+st.title("📊 Business Insight & Analytics")
+
+st.markdown("""
+Analisis ini dibuat berdasarkan hasil scraping produk
+**Motorcycle Oil** menggunakan Crawlbase.
+""")
+
+# ==========================
+# Summary Cards
+# ==========================
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(
+        "Harga Rata-rata",
+        f"${df['rawPrice'].mean():.2f}"
+    )
+
+with col2:
+    st.metric(
+        "Rating Rata-rata",
+        f"{df['rating'].mean():.2f}"
+    )
+
+with col3:
+    st.metric(
+        "Total Produk",
+        len(df)
+    )
+
+st.divider()
+
+# ==========================
+# Tabs
+# ==========================
+
+tab1, tab2, tab3 = st.tabs(
     [
-        "Harga",
-        "Rating",
-        "Review"
+        "💰 Harga",
+        "⭐ Rating",
+        "📝 Review"
     ]
 )
 
+# ==========================
+# Harga
+# ==========================
+
 with tab1:
 
-    st.subheader("Top 10 Harga Produk")
+    st.subheader("Top 10 Produk Termahal")
 
     chart = (
         df.sort_values(
@@ -28,9 +71,13 @@ with tab1:
 
     st.bar_chart(chart["rawPrice"])
 
+# ==========================
+# Rating
+# ==========================
+
 with tab2:
 
-    st.subheader("Top Rating Produk")
+    st.subheader("Top 10 Rating Produk")
 
     chart = (
         df.sort_values(
@@ -43,9 +90,13 @@ with tab2:
 
     st.bar_chart(chart["rating"])
 
+# ==========================
+# Review
+# ==========================
+
 with tab3:
 
-    st.subheader("Produk dengan Review Terbanyak")
+    st.subheader("Top 10 Produk dengan Review Terbanyak")
 
     chart = (
         df.sort_values(
@@ -60,19 +111,83 @@ with tab3:
 
 st.divider()
 
-st.subheader("Key Insights")
+# ==========================
+# Key Findings
+# ==========================
+
+st.subheader("🔍 Key Findings")
 
 produk_termahal = df.loc[df["rawPrice"].idxmax()]
 produk_termurah = df.loc[df["rawPrice"].idxmin()]
 produk_rating = df.loc[df["rating"].idxmax()]
+produk_review = df.loc[df["customerReviewCount"].idxmax()]
 
-st.success(f"""
-🏆 Produk dengan harga tertinggi:
-{produk_termahal['name']}
+col1, col2 = st.columns(2)
 
-💰 Produk dengan harga terendah:
-{produk_termurah['name']}
+with col1:
 
-⭐ Produk dengan rating tertinggi:
-{produk_rating['name']}
+    st.success(f"""
+🏆 Produk Termahal
+
+**{produk_termahal['name']}**
+
+Harga: ${produk_termahal['rawPrice']:.2f}
+""")
+
+    st.info(f"""
+💰 Produk Termurah
+
+**{produk_termurah['name']}**
+
+Harga: ${produk_termurah['rawPrice']:.2f}
+""")
+
+with col2:
+
+    st.success(f"""
+⭐ Rating Tertinggi
+
+**{produk_rating['name']}**
+
+Rating: {produk_rating['rating']}
+""")
+
+    st.info(f"""
+📝 Review Terbanyak
+
+**{produk_review['name']}**
+
+Review: {int(produk_review['customerReviewCount']):,}
+""")
+
+st.divider()
+
+# ==========================
+# Business Insights
+# ==========================
+
+st.subheader("💡 Business Insights")
+
+st.warning(f"""
+1. Rata-rata harga produk berada di kisaran
+${df['rawPrice'].mean():.2f}.
+
+2. Mayoritas produk memiliki rating tinggi
+dengan rata-rata {df['rating'].mean():.2f}.
+
+3. Produk dengan jumlah review terbesar
+cenderung memiliki tingkat kepercayaan
+pelanggan yang lebih tinggi.
+
+4. Crawlbase berhasil menghasilkan data
+yang dapat digunakan untuk price monitoring,
+market research, dan competitor analysis.
+""")
+
+st.success("""
+Kesimpulan:
+
+Crawlbase mampu mengumpulkan data e-commerce secara otomatis
+dan menghasilkan informasi yang dapat diolah menjadi insight
+bisnis untuk mendukung pengambilan keputusan.
 """)

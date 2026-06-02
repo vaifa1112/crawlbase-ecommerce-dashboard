@@ -1,14 +1,30 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.read_csv("motorcycle_oil_clean.csv")
+# ==========================
+# Load Data
+# ==========================
 
-st.title("📦 Scraping Result")
+df = pd.read_csv("amazone_motorcycle_oil.csv")
 
-col1,col2,col3,col4 = st.columns(4)
+st.title("📦 Hasil Scraping Amazon Marketplace")
+
+st.markdown("""
+Halaman ini menampilkan hasil scraping produk **Motorcycle Oil**
+menggunakan **Crawlbase Amazon SERP Scraper**.
+""")
+
+# ==========================
+# KPI
+# ==========================
+
+col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.metric("Total Produk", len(df))
+    st.metric(
+        "Total Produk",
+        len(df)
+    )
 
 with col2:
     st.metric(
@@ -24,15 +40,87 @@ with col3:
 
 with col4:
     st.metric(
-        "Review Maksimum",
+        "Review Tertinggi",
         f"{int(df['customerReviewCount'].max()):,}"
     )
 
 st.divider()
 
-st.subheader("Data Produk")
+# ==========================
+# Preview JSON
+# ==========================
+
+st.subheader("🧾 Contoh Output Crawlbase")
+
+contoh_json = {
+    "name": df.iloc[0]["name"],
+    "price": df.iloc[0]["rawPrice"],
+    "rating": df.iloc[0]["rating"],
+    "review_count": df.iloc[0]["customerReviewCount"]
+}
+
+st.json(contoh_json)
+
+st.divider()
+
+# ==========================
+# Filter
+# ==========================
+
+st.subheader("🔍 Filter Produk")
+
+min_harga = int(df["rawPrice"].min())
+max_harga = int(df["rawPrice"].max())
+
+harga_range = st.slider(
+    "Pilih Rentang Harga",
+    min_harga,
+    max_harga,
+    (min_harga, max_harga)
+)
+
+filtered_df = df[
+    (df["rawPrice"] >= harga_range[0]) &
+    (df["rawPrice"] <= harga_range[1])
+]
+
+# ==========================
+# Data Table
+# ==========================
+
+st.subheader("📋 Data Produk")
 
 st.dataframe(
-    df,
+    filtered_df,
     use_container_width=True
 )
+
+st.divider()
+
+# ==========================
+# Top Products
+# ==========================
+
+st.subheader("🏆 Top 5 Produk Berdasarkan Rating")
+
+top_rating = filtered_df.sort_values(
+    by="rating",
+    ascending=False
+).head(5)
+
+st.dataframe(
+    top_rating[
+        [
+            "name",
+            "rawPrice",
+            "rating",
+            "customerReviewCount"
+        ]
+    ],
+    use_container_width=True
+)
+
+st.success("""
+Data berhasil diperoleh menggunakan Crawlbase Amazon SERP Scraper
+dan telah dikonversi ke format CSV untuk analisis lebih lanjut.
+""")
