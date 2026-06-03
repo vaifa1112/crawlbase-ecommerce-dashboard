@@ -41,6 +41,51 @@ with col3:
 st.divider()
 
 # ==========================
+# Marketplace Comparison
+# ==========================
+
+st.subheader("🌐 Marketplace Comparison")
+
+comparison_df = pd.DataFrame({
+    "Marketplace": [
+        "Amazon",
+        "AliExpress",
+        "eBay"
+    ],
+    "Data Structure Score": [
+        100,
+        70,
+        0
+    ],
+    "Scraping Success Rate": [
+        100,
+        100,
+        0
+    ]
+})
+
+st.bar_chart(
+    comparison_df.set_index("Marketplace")
+)
+
+st.info("""
+Hasil eksplorasi menunjukkan bahwa:
+
+✅ Amazon menghasilkan data produk yang lengkap
+(nama produk, harga, rating, review).
+
+✅ AliExpress berhasil discrape menggunakan
+Generic Extractor namun hanya menghasilkan
+metadata halaman.
+
+❌ eBay gagal diekstrak karena Error 520
+sehingga tidak menghasilkan data yang dapat
+digunakan untuk analisis.
+""")
+
+st.divider()
+
+# ==========================
 # Tabs
 # ==========================
 
@@ -179,15 +224,24 @@ dengan rata-rata {df['rating'].mean():.2f}.
 cenderung memiliki tingkat kepercayaan
 pelanggan yang lebih tinggi.
 
-4. Crawlbase berhasil menghasilkan data
-yang dapat digunakan untuk price monitoring,
-market research, dan competitor analysis.
+4. Amazon menghasilkan data paling lengkap
+dibanding marketplace lain yang diuji.
+
+5. Crawlbase sangat cocok digunakan untuk
+price monitoring, competitor analysis,
+dan market research.
 """)
 
 st.success("""
 Kesimpulan:
 
-Crawlbase mampu mengumpulkan data e-commerce secara otomatis
-dan menghasilkan informasi yang dapat diolah menjadi insight
-bisnis untuk mendukung pengambilan keputusan.
+Berdasarkan hasil eksplorasi, Amazon merupakan
+marketplace yang menghasilkan data paling optimal
+karena tersedia scraper khusus yang mampu
+menghasilkan data produk terstruktur.
+
+Crawlbase terbukti mampu membantu proses
+pengumpulan data e-commerce secara otomatis
+dan menghasilkan insight yang dapat digunakan
+untuk mendukung pengambilan keputusan bisnis.
 """)
