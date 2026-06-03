@@ -2,50 +2,42 @@ import streamlit as st
 import pandas as pd
 
 # ==========================
-# Load Data
+# LOAD DATA
 # ==========================
 
 df = pd.read_csv("amazone_motorcycle_oil.csv")
 
-st.title("📦 Hasil Scraping & Eksplorasi Marketplace")
+st.title("📦 Hasil Scraping & Perbandingan Marketplace")
 
 st.markdown("""
-Halaman ini menampilkan hasil eksplorasi Crawlbase pada beberapa marketplace
-serta hasil scraping produk **Motorcycle Oil** menggunakan
-**Amazon SERP Scraper**.
+Halaman ini menampilkan hasil eksplorasi Crawlbase
+pada Amazon, AliExpress, dan eBay.
 """)
 
 # ==========================
-# KPI
+# KPI EXPLORATION
 # ==========================
+
+st.subheader("📊 Ringkasan Eksplorasi")
 
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.metric("Total Produk", len(df))
+    st.metric("Marketplace Diuji", "3")
 
 with col2:
-    st.metric(
-        "Harga Rata-Rata",
-        f"${df['rawPrice'].mean():.2f}"
-    )
+    st.metric("Berhasil", "2")
 
 with col3:
-    st.metric(
-        "Rating Rata-Rata",
-        f"{df['rating'].mean():.2f}"
-    )
+    st.metric("Gagal", "1")
 
 with col4:
-    st.metric(
-        "Review Tertinggi",
-        f"{int(df['customerReviewCount'].max()):,}"
-    )
+    st.metric("Success Rate", "66.7%")
 
 st.divider()
 
 # ==========================
-# Marketplace Comparison
+# MARKETPLACE COMPARISON
 # ==========================
 
 st.subheader("🌐 Perbandingan Marketplace")
@@ -63,7 +55,7 @@ comparison_df = pd.DataFrame({
     ],
     "Data Completeness": [
         100,
-        70,
+        60,
         0
     ]
 })
@@ -73,81 +65,65 @@ st.bar_chart(
 )
 
 st.info("""
-Amazon menghasilkan data produk lengkap.
-AliExpress berhasil diekstrak menggunakan Generic Extractor.
-eBay gagal diekstrak karena Error 520.
+Amazon menghasilkan data paling lengkap.
+AliExpress menghasilkan metadata halaman.
+eBay gagal karena Error 520.
 """)
 
 st.divider()
 
 # ==========================
-# Ringkasan Eksplorasi
+# AMAZON ANALYSIS
 # ==========================
 
-st.subheader("📊 Ringkasan Hasil Eksplorasi")
+st.header("🛒 Amazon Analysis")
 
-marketplace_result = pd.DataFrame({
-    "Marketplace": [
-        "Amazon",
-        "AliExpress",
-        "eBay"
-    ],
-    "Status": [
-        "✅ Berhasil",
-        "✅ Berhasil",
-        "❌ Gagal"
-    ],
-    "Output": [
-        "Nama Produk, Harga, Rating, Review",
-        "Title, Description, Images, Links",
-        "Error 520"
-    ]
-})
+col1, col2, col3, col4 = st.columns(4)
 
-st.dataframe(
-    marketplace_result,
-    use_container_width=True
-)
+with col1:
+    st.metric("Produk", len(df))
 
-st.divider()
+with col2:
+    st.metric(
+        "Avg Price",
+        f"${df['rawPrice'].mean():.2f}"
+    )
 
-# ==========================
-# JSON Preview
-# ==========================
+with col3:
+    st.metric(
+        "Avg Rating",
+        f"{df['rating'].mean():.2f}"
+    )
 
-st.subheader("🧾 Contoh Output JSON Amazon")
+with col4:
+    st.metric(
+        "Max Review",
+        f"{int(df['customerReviewCount'].max()):,}"
+    )
 
-contoh_json = {
+st.subheader("🧾 Contoh Output JSON")
+
+st.json({
     "name": df.iloc[0]["name"],
     "price": df.iloc[0]["rawPrice"],
     "rating": df.iloc[0]["rating"],
     "review_count": df.iloc[0]["customerReviewCount"]
-}
+})
 
-st.json(contoh_json)
-
-st.divider()
-
-# ==========================
-# Visual Analytics
-# ==========================
-
-st.subheader("📈 Top 15 Harga Produk")
+st.subheader("📈 Top 10 Harga Produk")
 
 price_chart = (
     df.sort_values(
         by="rawPrice",
         ascending=False
     )
-    .head(15)
+    .head(10)
     .set_index("name")
 )
 
 st.bar_chart(price_chart["rawPrice"])
 
-st.divider()
-
-st.subheader("⭐ Distribusi Rating Produk")
+st.subheader("⭐ Distribusi Rating")
 
 rating_chart = (
     df.groupby("rating")
@@ -158,202 +134,181 @@ rating_chart = (
 
 st.bar_chart(rating_chart)
 
-st.divider()
-
-# ==========================
-# Filter Produk
-# ==========================
-
-st.subheader("🔍 Filter Produk Amazon")
-
-min_harga = int(df["rawPrice"].min())
-max_harga = int(df["rawPrice"].max())
-
-harga_range = st.slider(
-    "Pilih Rentang Harga",
-    min_harga,
-    max_harga,
-    (min_harga, max_harga)
-)
-
-filtered_df = df[
-    (df["rawPrice"] >= harga_range[0]) &
-    (df["rawPrice"] <= harga_range[1])
-]
-
-st.divider()
-
-# ==========================
-# Data Produk
-# ==========================
-
-st.subheader("📋 Data Produk Amazon")
+st.subheader("📋 Data Produk")
 
 st.dataframe(
-    filtered_df,
+    df[
+        [
+            "name",
+            "rawPrice",
+            "rating",
+            "customerReviewCount"
+        ]
+    ],
     use_container_width=True
 )
 
-st.divider()
+st.subheader("🏆 Top 5 Produk Berdasarkan Rating")
 
-# ==========================
-# Top Products Analysis
-# ==========================
-
-st.subheader("🏆 Top Products Analysis")
-
-tab1, tab2, tab3 = st.tabs(
-    [
-        "💰 Harga Tertinggi",
-        "⭐ Rating Tertinggi",
-        "📝 Review Terbanyak"
-    ]
-)
-
-# Harga
-
-with tab1:
-
-    top_price = filtered_df.sort_values(
-        by="rawPrice",
-        ascending=False
-    ).head(5)
-
-    st.bar_chart(
-        top_price.set_index("name")["rawPrice"]
-    )
-
-    st.dataframe(
-        top_price[
-            [
-                "name",
-                "rawPrice",
-                "rating",
-                "customerReviewCount"
-            ]
-        ],
-        use_container_width=True
-    )
-
-# Rating
-
-with tab2:
-
-    top_rating = filtered_df.sort_values(
+top_rating = (
+    df.sort_values(
         by="rating",
         ascending=False
-    ).head(5)
-
-    st.bar_chart(
-        top_rating.set_index("name")["rating"]
     )
+    .head(5)
+)
 
-    st.dataframe(
-        top_rating[
-            [
-                "name",
-                "rawPrice",
-                "rating",
-                "customerReviewCount"
-            ]
-        ],
-        use_container_width=True
-    )
-
-# Review
-
-with tab3:
-
-    top_review = filtered_df.sort_values(
-        by="customerReviewCount",
-        ascending=False
-    ).head(5)
-
-    st.bar_chart(
-        top_review.set_index("name")["customerReviewCount"]
-    )
-
-    st.dataframe(
-        top_review[
-            [
-                "name",
-                "rawPrice",
-                "rating",
-                "customerReviewCount"
-            ]
-        ],
-        use_container_width=True
-    )
-
-st.divider()
-
-# ==========================
-# Insight Summary
-# ==========================
-
-st.subheader("💡 Insight Summary")
-
-produk_termahal = df.loc[df["rawPrice"].idxmax()]
-produk_rating = df.loc[df["rating"].idxmax()]
-produk_review = df.loc[df["customerReviewCount"].idxmax()]
-
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.metric(
-        "Produk Termahal",
-        f"${produk_termahal['rawPrice']:.2f}"
-    )
-
-with col2:
-    st.metric(
-        "Rating Tertinggi",
-        f"{produk_rating['rating']:.1f}"
-    )
-
-with col3:
-    st.metric(
-        "Review Terbanyak",
-        f"{int(produk_review['customerReviewCount']):,}"
-    )
-
-st.divider()
-
-# ==========================
-# Temuan Eksplorasi
-# ==========================
-
-st.subheader("🔍 Temuan Eksplorasi")
+st.dataframe(
+    top_rating[
+        [
+            "name",
+            "rawPrice",
+            "rating",
+            "customerReviewCount"
+        ]
+    ],
+    use_container_width=True
+)
 
 st.success("""
-1. Amazon menghasilkan data paling lengkap karena tersedia scraper khusus.
-
-2. AliExpress berhasil dieksplorasi menggunakan Generic Extractor,
-namun output yang diperoleh masih berupa metadata halaman.
-
-3. eBay tidak berhasil diekstrak karena Error 520.
-
-4. Keberhasilan scraping sangat dipengaruhi oleh jenis scraper
-dan struktur website yang digunakan.
+Amazon menghasilkan data paling lengkap karena
+menggunakan Amazon SERP Scraper.
 """)
 
 st.divider()
 
 # ==========================
-# Kesimpulan
+# ALIEXPRESS ANALYSIS
 # ==========================
 
-st.subheader("📌 Kesimpulan")
+st.header("🛍 AliExpress Analysis")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.metric(
+        "Status",
+        "Berhasil"
+    )
+
+with col2:
+    st.metric(
+        "Data Completeness",
+        "60%"
+    )
+
+ali_df = pd.DataFrame({
+    "Data yang Diperoleh": [
+        "Title",
+        "Description",
+        "Images",
+        "Links"
+    ],
+    "Status": [
+        "✅",
+        "✅",
+        "✅",
+        "✅"
+    ]
+})
+
+st.dataframe(
+    ali_df,
+    use_container_width=True
+)
+
+st.info("""
+AliExpress berhasil diekstrak menggunakan
+Generic Extractor.
+
+Output yang diperoleh berupa metadata halaman,
+bukan data produk terstruktur seperti Amazon.
+""")
 
 st.success("""
-Crawlbase berhasil digunakan untuk mengumpulkan data e-commerce
-secara otomatis.
+AliExpress cocok digunakan untuk eksplorasi
+konten halaman dan metadata website.
+""")
 
-Amazon menjadi marketplace dengan hasil scraping terbaik karena
-menghasilkan data produk yang lengkap dan siap dianalisis.
+st.divider()
 
-Eksplorasi ini menunjukkan bahwa Crawlbase dapat dimanfaatkan
-untuk monitoring harga, analisis kompetitor, market research,
-serta pengumpulan dataset untuk kebutuhan Data Analytics dan
-Machine Learning.
+# ==========================
+# EBAY ANALYSIS
+# ==========================
+
+st.header("🚫 eBay Analysis")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.metric(
+        "Status",
+        "Gagal"
+    )
+
+with col2:
+    st.metric(
+        "Success Rate",
+        "0%"
+    )
+
+st.error("""
+520 Web Server Returned an Unknown Error
+""")
+
+st.warning("""
+Kemungkinan penyebab:
+
+• Website memiliki proteksi anti-bot
+
+• Tidak tersedia scraper khusus
+
+• Pembatasan akses dari marketplace
+""")
+
+st.divider()
+
+# ==========================
+# RANKING
+# ==========================
+
+st.header("🏆 Ranking Hasil Eksplorasi")
+
+ranking_df = pd.DataFrame({
+    "Marketplace": [
+        "Amazon",
+        "AliExpress",
+        "eBay"
+    ],
+    "Exploration Score": [
+        100,
+        60,
+        0
+    ]
+})
+
+st.bar_chart(
+    ranking_df.set_index("Marketplace")
+)
+
+st.divider()
+
+# ==========================
+# KESIMPULAN
+# ==========================
+
+st.header("📌 Kesimpulan")
+
+st.success("""
+Amazon menjadi marketplace dengan hasil scraping terbaik
+karena menghasilkan data produk yang lengkap dan siap dianalisis.
+
+AliExpress berhasil dieksplorasi namun hanya menghasilkan
+metadata halaman.
+
+eBay gagal diekstrak karena Error 520.
+
+Eksplorasi ini menunjukkan bahwa keberhasilan scraping
+bergantung pada jenis scraper yang tersedia serta proteksi
+yang digunakan oleh masing-masing marketplace.
 """)
