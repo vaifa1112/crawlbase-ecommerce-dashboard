@@ -84,7 +84,7 @@ eBay gagal diekstrak karena Error 520.
 st.divider()
 
 # ==========================
-# Marketplace Result Table
+# Ringkasan Eksplorasi
 # ==========================
 
 st.subheader("📊 Ringkasan Hasil Eksplorasi")
@@ -115,7 +115,7 @@ st.dataframe(
 st.divider()
 
 # ==========================
-# Output Comparison
+# Output Marketplace
 # ==========================
 
 st.subheader("📑 Output yang Dihasilkan")
@@ -194,27 +194,75 @@ st.dataframe(
 st.divider()
 
 # ==========================
-# Top Product
+# Top Products Analysis
 # ==========================
 
-st.subheader("🏆 Top 5 Produk Berdasarkan Rating")
+st.subheader("🏆 Top Products Analysis")
 
-top_rating = filtered_df.sort_values(
-    by="rating",
-    ascending=False
-).head(5)
-
-st.dataframe(
-    top_rating[
-        [
-            "name",
-            "rawPrice",
-            "rating",
-            "customerReviewCount"
-        ]
-    ],
-    use_container_width=True
+tab1, tab2, tab3 = st.tabs(
+    [
+        "💰 Harga Tertinggi",
+        "⭐ Rating Tertinggi",
+        "📝 Review Terbanyak"
+    ]
 )
+
+with tab1:
+
+    top_price = filtered_df.sort_values(
+        by="rawPrice",
+        ascending=False
+    ).head(5)
+
+    st.dataframe(
+        top_price[
+            [
+                "name",
+                "rawPrice",
+                "rating",
+                "customerReviewCount"
+            ]
+        ],
+        use_container_width=True
+    )
+
+with tab2:
+
+    top_rating = filtered_df.sort_values(
+        by="rating",
+        ascending=False
+    ).head(5)
+
+    st.dataframe(
+        top_rating[
+            [
+                "name",
+                "rawPrice",
+                "rating",
+                "customerReviewCount"
+            ]
+        ],
+        use_container_width=True
+    )
+
+with tab3:
+
+    top_review = filtered_df.sort_values(
+        by="customerReviewCount",
+        ascending=False
+    ).head(5)
+
+    st.dataframe(
+        top_review[
+            [
+                "name",
+                "rawPrice",
+                "rating",
+                "customerReviewCount"
+            ]
+        ],
+        use_container_width=True
+    )
 
 st.divider()
 
