@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # ==========================
-# Load Data Amazon
+# Load Data
 # ==========================
 
 df = pd.read_csv("amazone_motorcycle_oil.csv")
@@ -22,10 +22,7 @@ serta hasil scraping produk **Motorcycle Oil** menggunakan
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.metric(
-        "Total Produk",
-        len(df)
-    )
+    st.metric("Total Produk", len(df))
 
 with col2:
     st.metric(
@@ -76,7 +73,7 @@ st.bar_chart(
 )
 
 st.info("""
-Amazon menghasilkan data produk yang lengkap.
+Amazon menghasilkan data produk lengkap.
 AliExpress berhasil diekstrak menggunakan Generic Extractor.
 eBay gagal diekstrak karena Error 520.
 """)
@@ -115,33 +112,7 @@ st.dataframe(
 st.divider()
 
 # ==========================
-# Output Marketplace
-# ==========================
-
-st.subheader("📑 Output yang Dihasilkan")
-
-output_df = pd.DataFrame({
-    "Marketplace": [
-        "Amazon",
-        "AliExpress",
-        "eBay"
-    ],
-    "Jenis Data": [
-        "Structured Product Data",
-        "Page Metadata",
-        "Tidak Berhasil"
-    ]
-})
-
-st.dataframe(
-    output_df,
-    use_container_width=True
-)
-
-st.divider()
-
-# ==========================
-# Preview JSON
+# JSON Preview
 # ==========================
 
 st.subheader("🧾 Contoh Output JSON Amazon")
@@ -154,6 +125,38 @@ contoh_json = {
 }
 
 st.json(contoh_json)
+
+st.divider()
+
+# ==========================
+# Visual Analytics
+# ==========================
+
+st.subheader("📈 Top 15 Harga Produk")
+
+price_chart = (
+    df.sort_values(
+        by="rawPrice",
+        ascending=False
+    )
+    .head(15)
+    .set_index("name")
+)
+
+st.bar_chart(price_chart["rawPrice"])
+
+st.divider()
+
+st.subheader("⭐ Distribusi Rating Produk")
+
+rating_chart = (
+    df.groupby("rating")
+    .size()
+    .reset_index(name="Jumlah")
+    .set_index("rating")
+)
+
+st.bar_chart(rating_chart)
 
 st.divider()
 
@@ -207,12 +210,18 @@ tab1, tab2, tab3 = st.tabs(
     ]
 )
 
+# Harga
+
 with tab1:
 
     top_price = filtered_df.sort_values(
         by="rawPrice",
         ascending=False
     ).head(5)
+
+    st.bar_chart(
+        top_price.set_index("name")["rawPrice"]
+    )
 
     st.dataframe(
         top_price[
@@ -226,12 +235,18 @@ with tab1:
         use_container_width=True
     )
 
+# Rating
+
 with tab2:
 
     top_rating = filtered_df.sort_values(
         by="rating",
         ascending=False
     ).head(5)
+
+    st.bar_chart(
+        top_rating.set_index("name")["rating"]
+    )
 
     st.dataframe(
         top_rating[
@@ -245,12 +260,18 @@ with tab2:
         use_container_width=True
     )
 
+# Review
+
 with tab3:
 
     top_review = filtered_df.sort_values(
         by="customerReviewCount",
         ascending=False
     ).head(5)
+
+    st.bar_chart(
+        top_review.set_index("name")["customerReviewCount"]
+    )
 
     st.dataframe(
         top_review[
@@ -267,6 +288,38 @@ with tab3:
 st.divider()
 
 # ==========================
+# Insight Summary
+# ==========================
+
+st.subheader("💡 Insight Summary")
+
+produk_termahal = df.loc[df["rawPrice"].idxmax()]
+produk_rating = df.loc[df["rating"].idxmax()]
+produk_review = df.loc[df["customerReviewCount"].idxmax()]
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(
+        "Produk Termahal",
+        f"${produk_termahal['rawPrice']:.2f}"
+    )
+
+with col2:
+    st.metric(
+        "Rating Tertinggi",
+        f"{produk_rating['rating']:.1f}"
+    )
+
+with col3:
+    st.metric(
+        "Review Terbanyak",
+        f"{int(produk_review['customerReviewCount']):,}"
+    )
+
+st.divider()
+
+# ==========================
 # Temuan Eksplorasi
 # ==========================
 
@@ -276,13 +329,12 @@ st.success("""
 1. Amazon menghasilkan data paling lengkap karena tersedia scraper khusus.
 
 2. AliExpress berhasil dieksplorasi menggunakan Generic Extractor,
-   namun output yang diperoleh masih berupa metadata halaman.
+namun output yang diperoleh masih berupa metadata halaman.
 
-3. eBay tidak berhasil diekstrak karena Error 520 yang menunjukkan
-   adanya proteksi atau keterbatasan scraper.
+3. eBay tidak berhasil diekstrak karena Error 520.
 
 4. Keberhasilan scraping sangat dipengaruhi oleh jenis scraper
-   dan struktur website yang digunakan.
+dan struktur website yang digunakan.
 """)
 
 st.divider()
