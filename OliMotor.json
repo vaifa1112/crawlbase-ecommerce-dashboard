@@ -1,0 +1,118 @@
+{
+  "original_status": 200,
+  "pc_status": 200,
+  "url": "https://www.tokopedia.com/search?q=oli%20motor",
+  "domain_complexity": "standard",
+  "body": {
+    "alert": "A generic web scraper has been selected. Please contact support if you require a more detailed scraper for your given URL.",
+    "title": "Jual oli motor | Tokopedia",
+    "favicon": "https://p16-images-comn-sg.tokopedia-static.net/tos-alisg-i-zr7vqa5nfb-sg/assets-tokopedia-lite/prod/icon144.png~tplv-zr7vqa5nfb-image.image",
+    "meta": {
+      "description": "Jual beli online produk oli motor hanya di Tokopedia. Lengkap, murah, aman dan nyaman.",
+      "keywords": ""
+    },
+    "content": "Menampilkan 1 - 60 barang dari total untuk \"oli motor\" Urutkan:",
+    "canonical": "https://www.tokopedia.com/search?q=oli%20motor",
+    "images": [
+      "https://p16-assets-sg.tokopedia-static.net/tos-alisg-i-cqp9s0kcd0-sg/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg",
+      "https://images.tokopedia.net/img/jbZAUJ/2024/12/13/fda11b59-552f-466f-ad1a-fb7d745b49bb.png",
+      "https://images.tokopedia.net/img/jbZAUJ/2024/12/13/8245182b-cce4-44c3-a078-f2038bd0baee.png",
+      "https://lf-web-assets.tokopedia-static.net/obj/tokopedia-web-sg/zeus_v2/aa950efb.png",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2023/9/5/11d6cc6b-1b16-407c-9275-687b62c553da.png~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=Na1T3zU6YsKZX7t6uiaSIZbMOhE%3D&x-signature-webp=Na1T3zU6YsKZX7t6uiaSIZbMOhE%3D&ect=4g",
+      "https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/df584f766b71480bb0baa049472e8a67~tplv-aphluv4xwc-origin-png.png?dr=15574&t=555f072d&ps=933b5bde&shp=ca7ba1b7&shcp=97278606&idc=my2&from=3397099959",
+      "https://p16-images-comn-sg.tokopedia-static.net/tos-alisg-i-zr7vqa5nfb-sg/img/goldmerchant/pm_activation/badge/Power%20Merchant%20Pro.png~tplv-zr7vqa5nfb-image.image",
+      "https://lf-web-assets.tokopedia-static.net/obj/tokopedia-web-sg/zeus_v2/ae78c469.svg",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2021/4/1/1ea2cd1c-f0e5-44e8-88ce-05a8288917d1.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=b9CX%2FNQgVixgnFD%2FMGy6NRZZufs%3D&x-signature-webp=b9CX%2FNQgVixgnFD%2FMGy6NRZZufs%3D&ect=4g",
+      "https://lf-web-assets.tokopedia-static.net/obj/tokopedia-web-sg/zeus_v2/9212ba62.svg",
+      "https://lf-web-assets.tokopedia-static.net/obj/tokopedia-web-sg/zeus_v2/2e112467.svg",
+      "https://p16-images-comn-sg.tokopedia-static.net/tos-alisg-i-zr7vqa5nfb-sg/img/official_store/badge_os.png~tplv-zr7vqa5nfb-image.image",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2024/2/17/077c0e29-4aff-4aef-a839-1103f67d2fab.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=J%2B44WrIFtvXl67GLKo1FrcUKwGw%3D&x-signature-webp=J%2B44WrIFtvXl67GLKo1FrcUKwGw%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/d665648cbbb240df85d4ac967ad0fd39~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=U3dkNoXTT0PftawNjeMfT1F25hg%3D&x-signature-webp=U3dkNoXTT0PftawNjeMfT1F25hg%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/08d82d37cc2e41bd97fd6d16c9457d3b~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=HgTXlGbKa%2FOioY028DV5v1eUXZ0%3D&x-signature-webp=HgTXlGbKa%2FOioY028DV5v1eUXZ0%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/29089f0e296d4c52b736720ccfa3f2c7~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=zOr6T3He9AKxcKlxHvsJk2m1huE%3D&x-signature-webp=zOr6T3He9AKxcKlxHvsJk2m1huE%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2023/1/7/e3ae75ed-a0d1-48ed-a556-8514627a1c4c.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=3t6zqI7puMkykdEaMHfizHiQNJk%3D&x-signature-webp=3t6zqI7puMkykdEaMHfizHiQNJk%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/f8fc8c93752245b99c6435cc3819a527~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=J%2FSWJMx9MSHfOKYCRQZXMkwOkAI%3D&x-signature-webp=J%2FSWJMx9MSHfOKYCRQZXMkwOkAI%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2025/1/14/dbe3d8e8-3d78-4d1e-9bd5-42cb3765bd9c.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=eAF4rZ46ViWc3CghtJ6MauPPdt8%3D&x-signature-webp=eAF4rZ46ViWc3CghtJ6MauPPdt8%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/49f40b30ac4249d38856677caea164ed~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=SIy9ptsQbbcBsuO545ZRTtqrtQ4%3D&x-signature-webp=SIy9ptsQbbcBsuO545ZRTtqrtQ4%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/daba04e62f0d443c95c7571b57150ac3~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=vB6Dp7cqbCLnPeGSP4tyIubv7uU%3D&x-signature-webp=vB6Dp7cqbCLnPeGSP4tyIubv7uU%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/1d4a73f0eeaf4744885385241dce08f1~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=lsvib2KYHD2ZoPQWSQgYFzjnosM%3D&x-signature-webp=lsvib2KYHD2ZoPQWSQgYFzjnosM%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/fb595922562a4a4585768450096ff449~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=m96y0W%2F01rO63CPIgOgbDtu5gfQ%3D&x-signature-webp=m96y0W%2F01rO63CPIgOgbDtu5gfQ%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2024/7/4/a8eec321-fdbb-41be-9192-cfdd61be2f70.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=AxnIC1GxQVUwVoELRK5CyR1cDvE%3D&x-signature-webp=AxnIC1GxQVUwVoELRK5CyR1cDvE%3D&ect=4g",
+      "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2020/9/30/8b9d4419-3ec1-4f65-b011-ed29b7649abd.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=OWEU2HM9GaNGCb%2BgXPTbOWw9edk%3D&x-signature-webp=OWEU2HM9GaNGCb%2BgXPTbOWw9edk%3D&ect=4g",
+      "https://www.tokopedia.com/akam/13/pixel_35667979?a=dD0yODM1NDI1ZWE5MGYzNzk1NTRlNWYxYjM2NGY2MTdhYWFjYTRiOTg4JmpzPW9mZg==",
+      "https://www.facebook.com/tr?id=1419424518349836&ev=PageView&noscript=1",
+      "https://www.facebook.com/tr?id=1419424518349836&ev=Search&noscript=1"
+    ],
+    "videos": [],
+    "grouped_images": {
+      "no_class_found": [
+        "https://p16-assets-sg.tokopedia-static.net/tos-alisg-i-cqp9s0kcd0-sg/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg",
+        "https://www.tokopedia.com/akam/13/pixel_35667979?a=dD0yODM1NDI1ZWE5MGYzNzk1NTRlNWYxYjM2NGY2MTdhYWFjYTRiOTg4JmpzPW9mZg==",
+        "https://www.facebook.com/tr?id=1419424518349836&ev=PageView&noscript=1",
+        "https://www.facebook.com/tr?id=1419424518349836&ev=Search&noscript=1"
+      ],
+      "css-mk7qd3": [
+        "https://images.tokopedia.net/img/jbZAUJ/2024/12/13/fda11b59-552f-466f-ad1a-fb7d745b49bb.png",
+        "https://images.tokopedia.net/img/jbZAUJ/2024/12/13/8245182b-cce4-44c3-a078-f2038bd0baee.png",
+        "https://lf-web-assets.tokopedia-static.net/obj/tokopedia-web-sg/zeus_v2/aa950efb.png"
+      ],
+      "uMlDjJuJiuswTkGYpYCBBA== wSt-NCwsL186UdS6D-IpAg==": [
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2023/9/5/11d6cc6b-1b16-407c-9275-687b62c553da.png~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=Na1T3zU6YsKZX7t6uiaSIZbMOhE%3D&x-signature-webp=Na1T3zU6YsKZX7t6uiaSIZbMOhE%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2021/4/1/1ea2cd1c-f0e5-44e8-88ce-05a8288917d1.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=b9CX%2FNQgVixgnFD%2FMGy6NRZZufs%3D&x-signature-webp=b9CX%2FNQgVixgnFD%2FMGy6NRZZufs%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2024/2/17/077c0e29-4aff-4aef-a839-1103f67d2fab.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=J%2B44WrIFtvXl67GLKo1FrcUKwGw%3D&x-signature-webp=J%2B44WrIFtvXl67GLKo1FrcUKwGw%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/d665648cbbb240df85d4ac967ad0fd39~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=U3dkNoXTT0PftawNjeMfT1F25hg%3D&x-signature-webp=U3dkNoXTT0PftawNjeMfT1F25hg%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/08d82d37cc2e41bd97fd6d16c9457d3b~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=HgTXlGbKa%2FOioY028DV5v1eUXZ0%3D&x-signature-webp=HgTXlGbKa%2FOioY028DV5v1eUXZ0%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/29089f0e296d4c52b736720ccfa3f2c7~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=zOr6T3He9AKxcKlxHvsJk2m1huE%3D&x-signature-webp=zOr6T3He9AKxcKlxHvsJk2m1huE%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2023/1/7/e3ae75ed-a0d1-48ed-a556-8514627a1c4c.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=3t6zqI7puMkykdEaMHfizHiQNJk%3D&x-signature-webp=3t6zqI7puMkykdEaMHfizHiQNJk%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/f8fc8c93752245b99c6435cc3819a527~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=J%2FSWJMx9MSHfOKYCRQZXMkwOkAI%3D&x-signature-webp=J%2FSWJMx9MSHfOKYCRQZXMkwOkAI%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2025/1/14/dbe3d8e8-3d78-4d1e-9bd5-42cb3765bd9c.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=eAF4rZ46ViWc3CghtJ6MauPPdt8%3D&x-signature-webp=eAF4rZ46ViWc3CghtJ6MauPPdt8%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/49f40b30ac4249d38856677caea164ed~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=SIy9ptsQbbcBsuO545ZRTtqrtQ4%3D&x-signature-webp=SIy9ptsQbbcBsuO545ZRTtqrtQ4%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/daba04e62f0d443c95c7571b57150ac3~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=vB6Dp7cqbCLnPeGSP4tyIubv7uU%3D&x-signature-webp=vB6Dp7cqbCLnPeGSP4tyIubv7uU%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/1d4a73f0eeaf4744885385241dce08f1~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=lsvib2KYHD2ZoPQWSQgYFzjnosM%3D&x-signature-webp=lsvib2KYHD2ZoPQWSQgYFzjnosM%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/fb595922562a4a4585768450096ff449~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=m96y0W%2F01rO63CPIgOgbDtu5gfQ%3D&x-signature-webp=m96y0W%2F01rO63CPIgOgbDtu5gfQ%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2024/7/4/a8eec321-fdbb-41be-9192-cfdd61be2f70.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=AxnIC1GxQVUwVoELRK5CyR1cDvE%3D&x-signature-webp=AxnIC1GxQVUwVoELRK5CyR1cDvE%3D&ect=4g",
+        "https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2020/9/30/8b9d4419-3ec1-4f65-b011-ed29b7649abd.jpg~tplv-aphluv4xwc-white-pad-v1:200:200.webp?lk3s=97278606&x-expires=1780681123&x-signature=OWEU2HM9GaNGCb%2BgXPTbOWw9edk%3D&x-signature-webp=OWEU2HM9GaNGCb%2BgXPTbOWw9edk%3D&ect=4g"
+      ],
+      "HfQw3mC2iBQQM8Ha9S0kjw== aKzJOAwYnwTN9NKZLa51bg==": [
+        "https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/df584f766b71480bb0baa049472e8a67~tplv-aphluv4xwc-origin-png.png?dr=15574&t=555f072d&ps=933b5bde&shp=ca7ba1b7&shcp=97278606&idc=my2&from=3397099959"
+      ],
+      "_63XCSQLAF1hJMidX4AzSdQ==": [
+        "https://p16-images-comn-sg.tokopedia-static.net/tos-alisg-i-zr7vqa5nfb-sg/img/goldmerchant/pm_activation/badge/Power%20Merchant%20Pro.png~tplv-zr7vqa5nfb-image.image",
+        "https://p16-images-comn-sg.tokopedia-static.net/tos-alisg-i-zr7vqa5nfb-sg/img/official_store/badge_os.png~tplv-zr7vqa5nfb-image.image"
+      ],
+      "bbUkCNRkldSGoN+pt0TdOA==": [
+        "https://lf-web-assets.tokopedia-static.net/obj/tokopedia-web-sg/zeus_v2/ae78c469.svg"
+      ],
+      "Z1iNQj-E+naR9TsjifaxZw==": [
+        "https://lf-web-assets.tokopedia-static.net/obj/tokopedia-web-sg/zeus_v2/9212ba62.svg"
+      ],
+      "+gFwr+QKBmB9gJvF845AkA==": [
+        "https://lf-web-assets.tokopedia-static.net/obj/tokopedia-web-sg/zeus_v2/2e112467.svg"
+      ]
+    },
+    "og_images": [],
+    "links": [
+      "https://www.tokopedia.com/mobile-apps",
+      "https://www.tokopedia.com/about/",
+      "https://seller.tokopedia.com/edu/topic/mulai-bisnis/materi-seller-baru/",
+      "https://www.tokopedia.com/promo/",
+      "https://www.tokopedia.com/help/",
+      "https://www.tokopedia.com",
+      "https://www.tokopedia.com/wj-automotive/castrol-activ-20w40-4t-800ml-oli-mesin-motor-bebek-20w-40-800-ml-bubble-dus-2b32b?extParam=ivf%3Dfalse%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/lestarimotor2/filter-oli-jupiter-mx-vega-zr-jupiter-z-jupiter-z1-vixion-jupiter-zr-mx-150-daytona-3508-motorcycle-motor-1731273883732379015?extParam=ivf%3Dtrue%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/lestarimotor2/oli-motor-matic-scooter-ecstar-r7000-sae-10w-40-4t-1l-mb?extParam=ivf%3Dfalse%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/lestarimotor2/oli-top1-oil-top-1-action-matic-untuk-motor-matik-smooth-synthetic-10w40-nmax-aerox-pcx-1l-100-asli-motorcycle-1731273883639776647?extParam=ivf%3Dtrue%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/pt-prabawa-parama/pertamina-enduro-racing-10w-40-1-liter-oli-motor-manual-original-1730446385762961075?extParam=ivf%3Dtrue%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/lestarimotor2/motul-moto-oli-motor-10w40-4t-1-liter-original-100-bebek-sport-scan-barcode-kemasan-baru-api-sl-sh-sj-jaso-ma2-untuk-semua-jenis-motor-4-tak-kopling-mesin-motorcycle-1731273889695761799?extParam=ivf%3Dtrue%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/lestarimotor2/repsol-mxr-plus-oil-oli-motor-bebek-sport-semi-synthetic-teknologi-api-sn-jaso-ma2-800ml-100-asli-kendaraan-mesin-motorcycle-1731273880010655111?extParam=ivf%3Dfalse%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/lestarimotor2/oli-motor-matic-matik-gulf-pride-scooter-plus-10w-30-10w-40-100-synthetic-oxy-bitor-teknologi-1l-sni-motorcycle-oil-1732777584771827079?extParam=ivf%3Dtrue%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/lestarimotor2/motul-oli-motor-scooter-power-le-4t-5w40-0-8l-1l-oil-matic-100-synthetic-untuk-semua-jenis-motor-kendaraan-motorcycle-mesin-1731273898418537863?extParam=ivf%3Dtrue%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/autochem/prestone-synthetic-motor-oil-10w-40-4l-oli-mesin-mobil-sintetik-1731520721257072574?extParam=ivf%3Dfalse%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/lestarimotor2/oli-top1-top-1-action-matic-10w40-vario-125-beat-cocok-untuk-motor-matik-semua-merk-100-original-motorcycle-1731273898144466311?extParam=ivf%3Dtrue%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/coating-mobil/flexible-corong-teleskopik-bensin-oli-motor-mobil-selang-lipat-tarik-flexible-draining-oil-funnel?extParam=ivf%3Dtrue%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/autochem/prestone-synthetic-diesel-motor-oil-15w-40-1l-oli-mesin-mobil-diesel-1731520667358169022?extParam=ivf%3Dfalse%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/lestarimotor2/oli-motor-yamaha-yamalube-super-sport-10w40-4t-1l-full-synthetic-100?extParam=ivf%3Dfalse%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch",
+      "https://www.tokopedia.com/g-force-official-store/oli-motor-sport-gforce-vega-10w40-api-sl-jaso-ma-synthetic-1l?extParam=ivf%3Dfalse%26keyword%3Doli+motor%26search_id%3D20260605163843310DCBBF4CCE6225A31O%26src%3Dsearch"
+    ]
+  }
+}

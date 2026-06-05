@@ -1,0 +1,41 @@
+{
+  "original_status": 200,
+  "pc_status": 200,
+  "url": "https://www.tokopedia.com/search?q=helm%20motor",
+  "domain_complexity": "standard",
+  "body": {
+    "alert": "A generic web scraper has been selected. Please contact support if you require a more detailed scraper for your given URL.",
+    "title": "Jual helm motor | Tokopedia",
+    "favicon": "https://p16-images-comn-sg.tokopedia-static.net/tos-alisg-i-zr7vqa5nfb-sg/assets-tokopedia-lite/prod/icon144.png~tplv-zr7vqa5nfb-image.image",
+    "meta": {
+      "description": "Jual beli online produk helm motor hanya di Tokopedia. Lengkap, murah, aman dan nyaman.",
+      "keywords": ""
+    },
+    "content": "",
+    "canonical": "https://www.tokopedia.com/search?q=helm%20motor",
+    "images": [
+      "https://p16-assets-sg.tokopedia-static.net/tos-alisg-i-cqp9s0kcd0-sg/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg",
+      "https://www.tokopedia.com/akam/13/pixel_5dfea6d4?a=dD02ZjA3OWY3M2Q1Y2VhZjE2ODQ4YjZiNTFmYWE4OTU3M2RkMGFkNDNhJmpzPW9mZg==",
+      "https://www.facebook.com/tr?id=1419424518349836&ev=PageView&noscript=1",
+      "https://www.facebook.com/tr?id=1419424518349836&ev=Search&noscript=1"
+    ],
+    "videos": [],
+    "grouped_images": {
+      "no_class_found": [
+        "https://p16-assets-sg.tokopedia-static.net/tos-alisg-i-cqp9s0kcd0-sg/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg",
+        "https://www.tokopedia.com/akam/13/pixel_5dfea6d4?a=dD02ZjA3OWY3M2Q1Y2VhZjE2ODQ4YjZiNTFmYWE4OTU3M2RkMGFkNDNhJmpzPW9mZg==",
+        "https://www.facebook.com/tr?id=1419424518349836&ev=PageView&noscript=1",
+        "https://www.facebook.com/tr?id=1419424518349836&ev=Search&noscript=1"
+      ]
+    },
+    "og_images": [],
+    "links": [
+      "https://www.tokopedia.com/mobile-apps/",
+      "https://www.tokopedia.com/about/",
+      "https://seller.tokopedia.com/edu/topic/mulai-bisnis/materi-seller-baru/",
+      "https://www.tokopedia.com/promo/",
+      "https://www.tokopedia.com/help/",
+      "https://www.tokopedia.com"
+    ]
+  }
+}
