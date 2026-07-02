@@ -1,156 +1,409 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
+from pathlib import Path
 
-st.set_page_config(page_title="Metodologi Scraping",layout="wide")
+# ====================================================
+# CONFIG
+# ====================================================
 
-st.title("📦 Metodologi Web Scraping Tokopedia")
-
-st.markdown("---")
-
-st.subheader("Alur Pengambilan Data")
-
-st.graphviz_chart("""
-
-digraph {
-
-rankdir=LR
-
-A[label="Tokopedia"]
-
-B[label="Selenium"]
-
-C[label="Auto Scroll"]
-
-D[label="Parsing HTML"]
-
-E[label="Extract Data"]
-
-F[label="Data Cleaning"]
-
-G[label="CSV / Excel"]
-
-A->B
-B->C
-C->D
-D->E
-E->F
-F->G
-
-}
-
-""")
-
-st.markdown("---")
-
-st.subheader("Penjelasan Tahapan")
-
-col1,col2=st.columns(2)
-
-with col1:
-
-    st.info("""
-**1. Selenium**
-
-Membuka website Tokopedia secara otomatis menggunakan browser Chrome.
-""")
-
-    st.info("""
-**2. Auto Scroll**
-
-Melakukan scroll hingga seluruh produk pada halaman dimuat.
-""")
-
-    st.info("""
-**3. Parsing HTML**
-
-Mengambil source HTML setelah halaman selesai dimuat.
-""")
-
-with col2:
-
-    st.success("""
-**4. Extract Data**
-
-Mengambil:
-
-- Nama Produk
-- Harga
-- Lokasi
-- Link Produk
-""")
-
-    st.success("""
-**5. Data Cleaning**
-
-Menghapus data kosong dan duplikat.
-""")
-
-    st.success("""
-**6. Export**
-
-Dataset disimpan menjadi CSV dan Excel.
-""")
-
-st.markdown("---")
-
-st.subheader("Dataset")
-
-df=pd.read_excel("tokopedia_aksesorisPengendara.xlsx")
-
-st.dataframe(df,use_container_width=True)
-
-st.markdown("---")
-
-st.metric("Total Produk",len(df))
-
-st.metric("Jumlah Kolom",len(df.columns))
-
-st.metric("Lokasi Unik",df["Lokasi"].nunique())
-
-st.markdown("---")
-
-st.subheader("Distribusi Lokasi")
-
-lokasi=df["Lokasi"].value_counts().head(10)
-
-st.bar_chart(lokasi)
-
-st.markdown("---")
-
-st.subheader("Pencarian Produk")
-
-keyword=st.text_input("Cari Nama Produk")
-
-if keyword:
-
-    hasil=df[df["Nama Produk"].str.contains(keyword,case=False)]
-
-    st.dataframe(hasil,use_container_width=True)
-
-st.markdown("---")
-
-csv=df.to_csv(index=False).encode("utf-8-sig")
-
-st.download_button(
-
-"⬇ Download CSV",
-
-csv,
-
-file_name="tokopedia.csv",
-
-mime="text/csv"
-
+st.set_page_config(
+    page_title="Metodologi Web Scraping",
+    page_icon="🛒",
+    layout="wide"
 )
 
-with open("tokopedia_aksesorisPengendara.xlsx","rb") as file:
+# ====================================================
+# CSS
+# ====================================================
 
-    st.download_button(
+st.markdown("""
+<style>
 
-        "⬇ Download Excel",
+.block-container{
+    padding-top:2rem;
+}
 
-        file,
+.card{
+    background:#1e293b;
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+    color:white;
+    border:1px solid #334155;
+}
 
-        file_name="tokopedia.xlsx"
+.title{
+    font-size:38px;
+    font-weight:bold;
+}
 
-    )
+.sub{
+    color:gray;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# ====================================================
+# LOAD DATA
+# ====================================================
+
+@st.cache_data
+def load_data():
+    csv_path = Path("data/tokopedia_aksesorisPengendara.csv")
+    if not csv_path.exists():
+        csv_path = Path("tokopedia_aksesorisPengendara.csv")
+    return pd.read_csv(csv_path)
+
+df = load_data()
+
+# ====================================================
+# HEADER
+# ====================================================
+
+st.markdown("""
+<div class='title'>
+🛒 Metodologi Web Scraping Tokopedia
+</div>
+
+<div class='sub'>
+Dataset hasil scraping menggunakan Selenium
+</div>
+""", unsafe_allow_html=True)
+
+st.divider()
+
+# ====================================================
+# WORKFLOW
+# ====================================================
+
+st.subheader("🔄 Workflow Web Scraping")
+
+st.markdown("""
+```text
+🛒 Tokopedia
+      │
+      ▼
+🤖 Selenium
+      │
+      ▼
+📜 Auto Scroll
+      │
+      ▼
+📄 Parsing HTML
+      │
+      ▼
+🧹 Data Cleaning
+      │
+      ▼
+📊 Dataset
+      │
+      ▼
+💾 CSV & Excelimport streamlit as st
+import pandas as pd
+import plotly.express as px
+from pathlib import Path
+
+# ====================================================
+# CONFIG
+# ====================================================
+
+st.set_page_config(
+    page_title="Metodologi Web Scraping",
+    page_icon="🛒",
+    layout="wide"
+)
+
+# ====================================================
+# CSS
+# ====================================================
+
+st.markdown("""
+<style>
+
+.block-container{
+    padding-top:2rem;
+}
+
+.card{
+    background:#1e293b;
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+    color:white;
+    border:1px solid #334155;
+}
+
+.title{
+    font-size:38px;
+    font-weight:bold;
+}
+
+.sub{
+    color:gray;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# ====================================================
+# LOAD DATA
+# ====================================================
+
+@st.cache_data
+def load_data():
+    csv_path = Path("data/tokopedia_aksesorisPengendara.csv")
+    if not csv_path.exists():
+        csv_path = Path("tokopedia_aksesorisPengendara.csv")
+    return pd.read_csv(csv_path)
+
+df = load_data()
+
+# ====================================================
+# HEADER
+# ====================================================
+
+st.markdown("""
+<div class='title'>
+🛒 Metodologi Web Scraping Tokopedia
+</div>
+
+<div class='sub'>
+Dataset hasil scraping menggunakan Selenium
+</div>
+""", unsafe_allow_html=True)
+
+st.divider()
+
+# ====================================================
+# WORKFLOW
+# ====================================================
+
+st.subheader("🔄 Workflow Web Scraping")
+
+st.markdown("""
+```text
+🛒 Tokopedia
+      │
+      ▼
+🤖 Selenium
+      │
+      ▼
+📜 Auto Scroll
+      │
+      ▼
+📄 Parsing HTML
+      │
+      ▼
+🧹 Data Cleaning
+      │
+      ▼
+📊 Dataset
+      │
+      ▼
+💾 CSV & Excelimport streamlit as st
+import pandas as pd
+import plotly.express as px
+from pathlib import Path
+
+# ====================================================
+# CONFIG
+# ====================================================
+
+st.set_page_config(
+    page_title="Metodologi Web Scraping",
+    page_icon="🛒",
+    layout="wide"
+)
+
+# ====================================================
+# CSS
+# ====================================================
+
+st.markdown("""
+<style>
+
+.block-container{
+    padding-top:2rem;
+}
+
+.card{
+    background:#1e293b;
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+    color:white;
+    border:1px solid #334155;
+}
+
+.title{
+    font-size:38px;
+    font-weight:bold;
+}
+
+.sub{
+    color:gray;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# ====================================================
+# LOAD DATA
+# ====================================================
+
+@st.cache_data
+def load_data():
+    csv_path = Path("data/tokopedia_aksesorisPengendara.csv")
+    if not csv_path.exists():
+        csv_path = Path("tokopedia_aksesorisPengendara.csv")
+    return pd.read_csv(csv_path)
+
+df = load_data()
+
+# ====================================================
+# HEADER
+# ====================================================
+
+st.markdown("""
+<div class='title'>
+🛒 Metodologi Web Scraping Tokopedia
+</div>
+
+<div class='sub'>
+Dataset hasil scraping menggunakan Selenium
+</div>
+""", unsafe_allow_html=True)
+
+st.divider()
+
+# ====================================================
+# WORKFLOW
+# ====================================================
+
+st.subheader("🔄 Workflow Web Scraping")
+
+st.markdown("""
+```text
+🛒 Tokopedia
+      │
+      ▼
+🤖 Selenium
+      │
+      ▼
+📜 Auto Scroll
+      │
+      ▼
+📄 Parsing HTML
+      │
+      ▼
+🧹 Data Cleaning
+      │
+      ▼
+📊 Dataset
+      │
+      ▼
+💾 CSV & Excelimport streamlit as st
+import pandas as pd
+import plotly.express as px
+from pathlib import Path
+
+# ====================================================
+# CONFIG
+# ====================================================
+
+st.set_page_config(
+    page_title="Metodologi Web Scraping",
+    page_icon="🛒",
+    layout="wide"
+)
+
+# ====================================================
+# CSS
+# ====================================================
+
+st.markdown("""
+<style>
+
+.block-container{
+    padding-top:2rem;
+}
+
+.card{
+    background:#1e293b;
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+    color:white;
+    border:1px solid #334155;
+}
+
+.title{
+    font-size:38px;
+    font-weight:bold;
+}
+
+.sub{
+    color:gray;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# ====================================================
+# LOAD DATA
+# ====================================================
+
+@st.cache_data
+def load_data():
+    csv_path = Path("data/tokopedia_aksesorisPengendara.csv")
+    if not csv_path.exists():
+        csv_path = Path("tokopedia_aksesorisPengendara.csv")
+    return pd.read_csv(csv_path)
+
+df = load_data()
+
+# ====================================================
+# HEADER
+# ====================================================
+
+st.markdown("""
+<div class='title'>
+🛒 Metodologi Web Scraping Tokopedia
+</div>
+
+<div class='sub'>
+Dataset hasil scraping menggunakan Selenium
+</div>
+""", unsafe_allow_html=True)
+
+st.divider()
+
+# ====================================================
+# WORKFLOW
+# ====================================================
+
+st.subheader("🔄 Workflow Web Scraping")
+
+st.markdown("""
+```text
+🛒 Tokopedia
+      │
+      ▼
+🤖 Selenium
+      │
+      ▼
+📜 Auto Scroll
+      │
+      ▼
+📄 Parsing HTML
+      │
+      ▼
+🧹 Data Cleaning
+      │
+      ▼
+📊 Dataset
+      │
+      ▼
+💾 CSV & Excel
